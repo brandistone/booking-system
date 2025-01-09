@@ -1,5 +1,7 @@
+import { SignedOut } from '@clerk/nextjs'
 import { Link } from 'lucide-react'
 import React from 'react'
+import { Button } from '../ui/button'
 
 const Header = () => {
   return (
@@ -10,7 +12,13 @@ const Header = () => {
                 />
             </Link>
             <div className='flex w-32 justify-end gap-3'>
-              
+              <SignedOut>
+                <Button asChild className='rounded-full' size='lg'>
+                  <Link href="/sign-in">
+                    Login
+                  </Link>
+                </Button>
+              </SignedOut>
 
             </div>
            
